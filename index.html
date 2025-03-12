@@ -253,20 +253,17 @@
 </div>
 
 <script>
-    // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 
-    // Load saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
     }
 
-    // Countdown Timer
     let timerInterval;
     let timeLeft = 0;
 
@@ -313,12 +310,10 @@
         }
     }
 
-    // Change Style of HTML Element
     const header = document.querySelector('header');
     header.style.fontSize = '2rem';
     header.style.transition = 'font-size 0.3s';
 
-    // Sorting, Filtering, and Reversing Product List
     const sortProducts = (order) => {
         const productList = document.getElementById('product-list');
         const productsArray = Array.from(productList.children);
@@ -348,7 +343,6 @@
         productsArray.reverse().forEach(product => productList.appendChild(product));
     };
 
-    // Dynamic Table
     const tableInput = document.getElementById('table-input');
     const addRowButton = document.getElementById('add-row');
     const dynamicTable = document.getElementById('dynamic-table').getElementsByTagName('tbody')[0];
@@ -376,7 +370,6 @@
         row.remove();
     }
 
-    // Interactive Image Gallery
     const gallery = document.getElementById('image-gallery');
     const modal = document.getElementById('image-modal');
     const modalImage = document.getElementById('modal-image');
@@ -399,7 +392,6 @@
         }
     });
 
-    // Existing Product and Cart Logic
     class Product {
         constructor(id, name, price, image) {
             this.id = id;
